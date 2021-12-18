@@ -1,4 +1,41 @@
-{
-  "apellido": "andres",
-  "edad": "21"
-}
+[
+	{
+		"nombre": "sdfffsf",
+		"fecha_apertura": "dfdsf",
+		"direccion": "sf",
+		"estrellas": "f",
+		"categoria": "fs",
+		"menu": [
+			{
+				"nombre_plato": "fsd",
+				"descripcion": "ddsf",
+				"precio": "",
+				"tipo": "d",
+				"vegano": "true"
+			}
+		]
+	},
+	{
+		"nombre": "La casa en la playa",
+		"fecha_apertura": "2020",
+		"direccion": "Playa",
+		"estrellas": "3",
+		"categoria": "General",
+		"menu": [
+			{
+				"nombre_plato": "Arroz marinero",
+				"descripcion": "arroz ",
+				"precio": "12",
+				"tipo": "Fuerte",
+				"vegano": "false"
+			},
+			{
+				"nombre_plato": "Sopa",
+				"descripcion": "sopa",
+				"precio": "20",
+				"tipo": "sopa",
+				"vegano": "true"
+			}
+		]
+	}
+]
