@@ -1,0 +1,7 @@
+{
+  "name": "wavan-palma-ponce-bryan-andres",
+  "version": "1.0.0",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
