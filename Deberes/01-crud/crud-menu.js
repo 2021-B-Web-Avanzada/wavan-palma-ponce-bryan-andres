@@ -101,9 +101,9 @@ async function actualizarMenu() {
         },
     ])
     let indexUpdate = jsonFile.findIndex(
-        function (actual, index) {
-            if (actual.nombre_plato === seleccion.option) {
-                return index
+        function (menu_actual, i) {
+            if (menu_actual.nombre_plato === seleccion.option) {
+                return i
             }
         }
     )

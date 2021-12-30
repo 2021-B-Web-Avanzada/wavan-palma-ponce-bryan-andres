@@ -10,10 +10,13 @@ import { RutaInicioComponent } from './rutas/ruta-inicio/ruta-inicio.component';
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
 import { RutaPostComponent } from './rutas/ruta-post/ruta-post.component';
 import { RutaAppComponent } from './rutas/ruta-app/ruta-app.component';
-import { AuthService } from './rutas/servicios/auth/auth.services';
+import {AuthService} from './servicios/auth/auth.service';
+import {EstaLogeadoGuard} from './servicios/auth/esta-logeado.guard';
+import {EsAdministradorGuard} from './servicios/auth/es-administrador.guard';
+import {BannerImagenesModule} from './componentes/banner-imagenes/banner-imagenes.module';
 
 @NgModule({
-  //componentes
+  // Componentes
   declarations: [
     AppComponent,
     RutaLoginComponent,
@@ -24,17 +27,23 @@ import { AuthService } from './rutas/servicios/auth/auth.services';
     RutaPostComponent,
     RutaAppComponent
   ],
-  //modulos
+  // Modulos Importados
   imports: [
+    // app.module.ts
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BannerImagenesModule
   ],
-  //servicios
+  // Servicios
   providers: [
     AuthService,
+    EstaLogeadoGuard,
+    EsAdministradorGuard
   ],
-  //componente principal
-  bootstrap: [AppComponent]
+  // Componente principal (aqui es donde empieza toodo)
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
 

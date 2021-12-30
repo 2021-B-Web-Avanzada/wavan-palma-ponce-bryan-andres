@@ -37,8 +37,8 @@ const ingresoRestaurant = () => {
 async function crearRestaurante() {
     const restaurant = await ingresoRestaurant();
     restaurant.menu = []
-    fileContent = fs.readFileSync('./ejem.txt', 'utf-8')
-    jsonFile = JSON.parse(fileContent)
+    let fileContent = fs.readFileSync('./ejem.txt', 'utf-8')
+    let jsonFile = JSON.parse(fileContent)
     jsonFile.push(restaurant)
     await ga.escribirArchivo(jsonFile)
 }
@@ -80,8 +80,8 @@ async function actualizarRestaurante() {
 }
 
 async function eliminarRestaurante() {
-    fileContent = fs.readFileSync('./ejem.txt', 'utf-8')
-    jsonFile = JSON.parse(fileContent)
+    let fileContent = fs.readFileSync('./ejem.txt', 'utf-8')
+    let jsonFile = JSON.parse(fileContent)
     let restaurantes = [];
     jsonFile.forEach(element => {
         restaurantes.push(element.nombre);
@@ -95,8 +95,8 @@ async function eliminarRestaurante() {
         },
     ])
     let indexUpdate = jsonFile.findIndex(
-        function (actual, index) {
-            if (actual.nombre === seleccion.option) {
+        function (res_actual, index) {
+            if (res_actual.nombre === seleccion.option) {
                 return index
             }
         }
