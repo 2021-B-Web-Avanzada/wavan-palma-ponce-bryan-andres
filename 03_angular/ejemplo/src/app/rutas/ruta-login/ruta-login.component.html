@@ -1,5 +1,21 @@
-<app-banner-imagenes>
-</app-banner-imagenes>
-<p>ruta-login works!</p>
-<app-banner-imagenes>
+
+
+
+
+
+<h1>NG FOR</h1>
+    <div *ngFor="let usuario of arregloUsuarios; let i = index">
+      <app-banner-imagenes [color]="usuario.color"
+                           [url]="usuario.link"
+                           [urlImagen]="usuario.link_imagen">
+
+      </app-banner-imagenes>
+  </div>
+
+
+<h1>NG IF</h1>
+<button (click)="cambiarOcultarSegundoBanner()">
+  {{(mostrarSegundoBanner) ? 'ocultar' : 'mostrar' }}
+</button>
+<app-banner-imagenes *ngIf="mostrarSegundoBanner">
 </app-banner-imagenes>

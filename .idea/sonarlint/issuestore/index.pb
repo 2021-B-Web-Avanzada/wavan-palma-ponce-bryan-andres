@@ -9,3 +9,9 @@ S
 #Deberes/01-crud/gestion-archivos.js,2\3\23e4ba78cba5513670132da3ea2a0a06f68f598b
 G
 Deberes/01-crud/main.js,c\8\c8f8648281de5a7510fd1a79275a60060f5affbb
+ˆ
+X03_angular/ejemplo/src/app/modulos/modulo-inventario/modulo-inventario-routing.module.ts,f\6\f623a98167553e5c144ae06baae64234a43b1eb5
+•
+e03_angular/ejemplo/src/app/componentes/banner-imagenes/banner-imagenes/banner-imagenes.component.scss,1\a\1a94fc99f750d7d7c242621b86cea490a9bec2c1
+M
+03_angular/ejemplo/.gitignore,3\1\312b032112ff7a3834db6989b8dc1bb9dbaeef3b

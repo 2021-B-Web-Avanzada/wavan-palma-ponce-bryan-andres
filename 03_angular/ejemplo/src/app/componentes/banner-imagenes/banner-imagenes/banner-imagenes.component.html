@@ -1,1 +1,21 @@
-<h1>HOLAAAAAA</h1>
+<h1 [ngStyle]="{
+'background-color':'#000',
+'color':color,
+'border':'solid 5px'+color}">
+  HOLAAAAAA</h1>
+
+<img [src]="urlImagen" alt="">
+<a [href]="url" target="_blank">mas info</a>
+
+<button (blur)="ejecutarEventoBlur()"
+        (click)="ejecutarEventoClick()"
+>
+  Event Binding
+</button>
+
+<p>{{
+  fecha|date: 'dd-MM-YYYY'}}</p>
+<p>{{sueldo|currency}}</p>
+<pre>
+  {{mascotas|json}}
+</pre>
