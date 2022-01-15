@@ -1,0 +1,140 @@
+
+#post-card{
+  width:505px;
+}
+#post-card:hover{
+  border: 1px solid darkslategrey;
+}
+/* columna de votos*/
+.left-col{
+  background-color: #f6f7f8;
+}
+#upvote{
+  padding-top:7px
+}
+#upvote img{
+  height:20px;
+  width:20px;
+  padding: 0 0 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#downvote{
+  height:20px;
+  width:20px;
+  padding:0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#vote-count p{
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding:0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size:14px;
+}
+
+/*fila de datos del post*/
+.top-data{
+  padding-top:5px;
+}
+#subr-img img{
+  border-radius:50%;
+  height:20px;
+  border: 1px solid;
+  margin-right: 5px;
+}
+#post-title{
+  padding-bottom: 10px;
+}
+#post-title p{
+  font-size:18px;
+  font-weight:bold;
+  padding: -10px 100px 10px 12px;
+  margin: auto;
+  line-height:120%
+}
+.post-image{
+  padding-bottom: 10px;
+}
+.subr-name{
+  padding-left: 0;
+  padding-right:0;
+  width:85px;
+}
+.subr-name p{
+  padding-top: 3px;
+  padding-bottom: 0;
+  font-weight:bolder;
+  font-size:12px;
+}
+.post-user{
+  padding-left: 0;
+  padding-right:0;
+  width:230px;
+}
+.post-user p{
+  padding: 5px 0 0 0;
+  font-size:11px;
+  margin:0;
+}
+.join{
+  justify-content: right;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right:0;
+  width: 20%;
+}
+.button-join{
+  position: relative;
+  background-color: #0079d3;
+  border: none;
+  color: #ffffff;
+  fill: #ffffff;
+  width:55px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 12px;
+  border-radius: 9999px;
+}
+.button-join:hover{
+  background-color: #0080de;
+}
+
+/*parte de abajo del post*/
+
+.opciones-post p{
+  color: #6a6f6f
+}
+.comment-icon img{
+  height:20px;
+
+}
+.save-icon img{
+  height:20px;
+}
+.share-icon{
+  padding-left: 0;
+  width:5%
+}
+.share-icon img{
+  height:20px;
+
+}
+.opciones-post{
+  font-size:12px;
+  font-weight:bold;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.comment{
+  padding:0;
+}
+.share{
+  padding-left: 2px;
+  padding-right:0;
+width:10%
+}
+.save{
+padding-left: 2px;
+}
+
