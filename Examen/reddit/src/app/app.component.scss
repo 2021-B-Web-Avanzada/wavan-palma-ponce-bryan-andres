@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'benton';
+  src: url('../fonts/bentonsans_regular-webfont.woff') format('woff');
+  src: url('../fonts/bentonsans_regular-webfont.woff2') format('woff2')
+}
+
+.section-title{
+  font-family: 'benton', sans-serif;
+  color: #383838;
+  border: 0;
+  font-weight: 900;
+  font-size:14px;
+ }
