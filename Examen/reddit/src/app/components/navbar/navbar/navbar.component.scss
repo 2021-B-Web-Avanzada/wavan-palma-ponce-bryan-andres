@@ -1,0 +1,61 @@
+
+.navbar{
+  height:8%;
+  padding: 0 40px 0 20px
+}
+.img-logo{
+  width: 105%;
+  height:35px
+}
+.form-control{
+  background-color: #f4f5f6;
+  border-color: #e7e7e7;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 13px;
+  width:  46vw;
+}
+.form-control:hover{
+  background-color: #ffffff;
+  border-color: #0078d2
+}
+#btn-login{
+  border-radius: 9999px;
+border-color: #0078d2;
+  font-weight: bold;
+  color: #0078d2;
+  background-color: #fff;
+  width:  9vw;
+  height: 30px;
+  padding:0;
+  margin:auto  10px auto  auto;
+}
+#btn-login:hover{
+  background-color: #f3f8fb
+}
+#btn-signup{
+  border-radius: 9999px;
+  border-color: #0078d2;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0078d2;
+  width:  9vw;
+  height: 30px;
+  padding:0;
+  margin:auto  10px auto  auto;
+}
+#btn-signup:hover {
+  background-color: #1483d5
+}
+#dropdownMenuButton{
+  background-color: rgba(255, 255, 255, 0);
+  border-color:rgba(255, 255, 255, 0);
+  padding-right: 0;
+}
+#dropdownMenuButton:hover{
+  border-color: rgb(196, 196, 196);
+}
+.bi{
+  color: rgb(134, 137, 139);
+  font-size: 18px;
+  margin-right: 5px;
+}
