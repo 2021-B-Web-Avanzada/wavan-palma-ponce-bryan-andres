@@ -1,6 +1,6 @@
-*{
-  border: 1px solid
-}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;500;700&family=Noto+Sans:wght@700&display=swap');
+
 p{
   margin: 0
 }
@@ -14,24 +14,55 @@ img{
 .col-1{
   background-color: #f6f7f8;
 }
+.icon{
+  font-size:12px;
+  font-family: 'IBM Plex Sans';
+  font-weight: bold;
+  color: #86898b;
+}
 .icon img{
   height:20px;
   width:20px;
+  filter: invert(56%) sepia(6%) saturate(144%) hue-rotate(161deg) brightness(96%) contrast(86%);
 }
 .post-title{
   padding-bottom: 10px;
 }
 .post-title p{
   font-size:18px;
-  font-weight:bold;
+  font-weight:500;
   padding: -10px 100px 10px 12px;
   margin: auto;
   line-height:120%;
   font-family: 'IBM Plex Sans'
 }
-
-
-
+.w-25{
+  font-family: 'IBM Plex Sans';
+  font-weight: bolder;
+  font-size: 13px;
+}
+.w-80{
+  font-family: 'IBM Plex Sans';
+  font-weight: normal;
+  font-size: 13px;
+  color: #6a6f6f;
+}
+.vote-count{
+  font-weight: bold;
+  font-size:12px;
+  color: #000000
+}
+.col-auto{
+  padding-left:0;
+  padding-right:5px
+}
+.col-sm-auto{
+  padding-left:0;
+  padding-right:15px;
+}
+.bi-three-dots{
+  color: #6a6f6f;
+}
 
 .subr-img{
   border-radius:50%;
