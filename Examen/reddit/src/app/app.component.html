@@ -1,33 +1,79 @@
 <app-navbar></app-navbar>
+
 <div class="container mt-5 pt-3">
-  <div class="row justify-content-md-left">
-    <p class="section-title">Trending today</p>
-  </div>
-  <div class="row justify-content-md-left">
+  <p class="section-title  mb-1 mt-0">Trending today</p>
+  <div class="row justify-content-sm-left ">
     <app-trending></app-trending>
     <app-trending></app-trending>
     <app-trending></app-trending>
     <app-trending></app-trending>
   </div>
-  <div class="row justify-content-md-left">
-    <p class="section-title">Popular posts</p>
-  </div>
-  <div class="row justify-content-md-center">
-    <div class="col-8">
-      <div class="row justify-content-md-left">
-        <p class="section-title">Updates</p>
+  <p class="section-title">Popular posts</p>
+  <div class="row justify-content-left ml-1">
+    <div class="col-7">
+      <div class="row justify-content-left mb-4">
+        <div class="card w-100 p-3">
+          <div class="row justify-content-between pl-3 pr-3">
+              <p class="align-self-lg-start section-title update-from-reddit">UPDATES  FROM REDDIT</p>
+            <i class="bi bi-x-lg"></i>
+          </div>
+          <div class="card-body p-3">
+            <div class="card">
+              <div class="card-body recap">
+                <div class="row justify-content-between pl-3 pr-3">
+                  <div>
+                    <p>Hola</p>
+                    <p>Hola</p>
+                  </div>
+                  <i class="bi bi-x-lg"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row justify-content-md-left">
-        <p class="section-title">Filtros</p>
-      </div>
-      <div class="row justify-content-md-left">
-        <app-posts></app-posts>
+      <div class="row justify-content-left align-items-md-center filters mb-2 p-0">
+        <div class="card w-100">
+          <div class="card-body row justify-content-between m-0 pl-0 pt-2 pb-2">
+            <div class="col-10">
+            <button class="btn btn-primary hot-button mr-1" type="button">
+              <img alt="" class="hot-icon" src="./assets/images/hot.svg"/>
+              Hot
+            </button>
+            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary mr-1" data-toggle="dropdown"
+                    id="dropdownMenuButton" type="button">
+              Everywhere
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+            <button class="btn btn-primary new-button filter-button mr-1" type="button">
+              <img alt="" class="filter-icon" src="./assets/images/new.svg"/>
+              New</button>
+            <button class="btn btn-primary top-button filter-button mr-0" type="button">
+              <img alt="" class="filter-icon" src="./assets/images/top.svg"/>
+              Top</button>
+              <button class="btn btn-primary top-button filter-button m-0" type="button">
+                <i class="bi bi-three-dots filter-icon ml-1 "></i>
+              </button>
+
+            </div>
+            <div class="col-2 align-self-center pd-0 pl-4">
+              <img alt="" class="filter-icon  " src="./assets/images/card.svg"/>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-4">g
-    g
-    gg
-    g
+      g
+      gg
+      g
     </div>
   </div>
 </div>
