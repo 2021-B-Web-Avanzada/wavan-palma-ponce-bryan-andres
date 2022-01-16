@@ -1,75 +1,99 @@
 <app-navbar></app-navbar>
 
 <div class="container mt-5 pt-3">
+
   <p class="section-title  mb-1 mt-0">Trending today</p>
+
   <div class="row justify-content-sm-left ">
     <app-trending></app-trending>
     <app-trending></app-trending>
     <app-trending></app-trending>
     <app-trending></app-trending>
   </div>
+
   <p class="section-title">Popular posts</p>
+
   <div class="row justify-content-left ml-1">
+
     <div class="col-7">
+
       <div class="row justify-content-left mb-4">
         <div class="card w-100 p-3">
           <div class="row justify-content-between pl-3 pr-3">
-              <p class="align-self-lg-start section-title update-from-reddit">UPDATES  FROM REDDIT</p>
+            <p class="align-self-lg-start section-title update-from-reddit">UPDATES FROM REDDIT</p>
             <i class="bi bi-x-lg"></i>
           </div>
-            <div class="card recap align-self-center">
-                <div class="row justify-content-between pl-4 pr-5 pb-2 pt-2">
-                  <div class="w-75">
-                    <p class="recap-title pt-1 mb-0">Your Reddit Recap is here</p>
-                    <p class="recap-desc mb-0">Reveal your best comment, revisit your favorite communities, unlock your superpower and more.</p>
-                  </div>
-                  <img src="https://i.redd.it/8yb4biw7bf481.png" class="narval">
-                </div>
+          <div class="card recap align-self-center">
+            <div class="row justify-content-between pl-4 pr-5 pb-2 pt-2">
+              <div class="w-75">
+                <p class="recap-title pt-1 mb-0">Your Reddit Recap is here</p>
+                <p class="recap-desc mb-0">Reveal your best comment, revisit your favorite communities, unlock your
+                  superpower and more.</p>
+              </div>
+              <img class="narval" src="https://i.redd.it/8yb4biw7bf481.png">
+            </div>
           </div>
         </div>
       </div>
+
       <div class="row justify-content-left align-items-md-center filters mb-2 p-0">
         <div class="card w-100">
           <div class="card-body row justify-content-between m-0 pl-0 pt-2 pb-2">
             <div class="col-10">
-            <button class="btn btn-primary hot-button mr-1" type="button">
-              <img alt="" class="hot-icon" src="./assets/images/hot.svg"/>
-              Hot
-            </button>
-            <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary mr-1" data-toggle="dropdown"
-                    id="dropdownMenuButton" type="button">
-              Everywhere
-              <i class="bi bi-chevron-down"></i>
-            </button>
-            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            <button class="btn btn-primary new-button filter-button mr-1" type="button">
-              <img alt="" class="filter-icon" src="./assets/images/new.svg"/>
-              New</button>
-            <button class="btn btn-primary top-button filter-button mr-0" type="button">
-              <img alt="" class="filter-icon" src="./assets/images/top.svg"/>
-              Top</button>
+              <button class="btn btn-primary hot-button mr-1" type="button">
+                <img alt="" class="hot-icon" src="./assets/images/hot.svg"/>
+                Hot
+              </button>
+              <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary mr-1" data-toggle="dropdown"
+                      id="dropdownMenuButton" type="button">
+                Everywhere
+                <i class="bi bi-chevron-down"></i>
+              </button>
+              <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+              <button class="btn btn-primary new-button filter-button mr-1" type="button">
+                <img alt="" class="filter-icon" src="./assets/images/new.svg"/>
+                New
+              </button>
+              <button class="btn btn-primary top-button filter-button mr-0" type="button">
+                <img alt="" class="filter-icon" src="./assets/images/top.svg"/>
+                Top
+              </button>
               <button class="btn btn-primary top-button filter-button m-0" type="button">
                 <i class="bi bi-three-dots filter-icon ml-1 "></i>
               </button>
-
             </div>
             <div class="col-2 align-self-center pd-0 pl-4">
               <img alt="" class="filter-icon  " src="./assets/images/card.svg"/>
               <i class="bi bi-chevron-down"></i>
             </div>
-
           </div>
         </div>
       </div>
+
+      <div class="row justify-content-left align-items-md-center filters mb-2 p-0 mt-4">
+        <div class="card w-100">
+          <div class="card-body row justify-content-between m-0 pl-0 p-0 ">
+  <app-posts></app-posts>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="col-4">g
-      g
-      gg
-      g
+
+    <div class="col-4 ml-4">
+      <div class="row justify-content-left mb-4">
+        <div class="card w-100 p-3">
+  <app-top></app-top><app-top></app-top>
+          <app-top></app-top>
+          <app-top></app-top>
+
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

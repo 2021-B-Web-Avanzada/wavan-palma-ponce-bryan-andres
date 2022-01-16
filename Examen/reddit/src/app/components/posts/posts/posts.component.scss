@@ -33,6 +33,7 @@
   margin-bottom: 8px;
   text-align: center;
   font-size:14px;
+  font-weight:bold;
 }
 
 /*fila de datos del post*/
@@ -53,7 +54,8 @@
   font-weight:bold;
   padding: -10px 100px 10px 12px;
   margin: auto;
-  line-height:120%
+  line-height:120%;
+  font-family: 'IBM Plex Sans'
 }
 .post-image{
   padding-bottom: 10px;
@@ -94,6 +96,7 @@
   fill: #ffffff;
   width:55px;
   font-family: 'Noto Sans', sans-serif;
+  font-weight:bold;
   font-size: 12px;
   border-radius: 9999px;
 }
