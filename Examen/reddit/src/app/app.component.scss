@@ -95,6 +95,26 @@
   color: #6a6f6f;
   font-size: 12px;
 }
+.card-header{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height:100px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      #000000
+  ),
+  url('http://pm1.narvii.com/7119/b0abdf491cffde4bdf95850956c1b15a5591a4b5r1-712-707v2_uhq.jpg');
+  background-size: cover;
+  color: white;
+  font-family: 'benton';
+}
+
+
 
 
 
