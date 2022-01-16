@@ -1,18 +1,20 @@
-<div class="card m-2 mt-0 mb-4" id="trendingPosts" >
+<a href="#">
+<div class="card m-2 mt-0 mb-4" id="trendingPosts">
   <div class="card-img-overlay-container ">
     <div class="container-fluid ">
       <div class="row pl-2" >
-        <h5 id="trending-title">Covid</h5>
+        <h5 id="trending-title">{{trendingName}}</h5>
       </div>
       <div class="row pl-2">
-        <h6 id="trending-desc" class="mr-2">Descubra como ser cruceta y otras cositas como...</h6>
+        <h6 id="trending-desc" class="mr-2">{{trendingDescription}}...</h6>
       </div>
       <div class="row pl-2">
         <span id="related-trending">
-          <img id="related-trending-img" src="favicon.ico" alt="related-trending">
-          r/davidgG and more
+          <img id="related-trending-img" [src]="trendingIcon" alt="related-trending">
+          {{trendingSubr}}
         </span>
       </div>
     </div>
   </div>
 </div>
+</a>

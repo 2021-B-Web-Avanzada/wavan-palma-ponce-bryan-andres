@@ -8,7 +8,7 @@
               <img alt="" src="../../../../assets/images/upvote.svg">
             </div>
             <div class="row icon row justify-content-center m-0">
-              <p class="vote-count pt-1 pb-1">2.7k</p>
+              <p class="vote-count pt-1 pb-1">{{numVotes}}k</p>
             </div>
             <div class="row icon row justify-content-center m-0">
               <img alt="" src="../../../../assets/images/downvote.svg">
@@ -21,10 +21,10 @@
 
               <div class="col-9 align-self-center pt-2 pb-3">
                 <div class="row">
-                  <img alt="related-trending" class="subr-img mr-1" src="favicon.ico">
-                  <p class="w-25">17 r/AskReddit</p>
+                  <img alt="related-trending" class="subr-img mr-1" [src]="subrPhoto">
+                  <p class="w-auto">{{subrName}}</p>
                   <p class="w-80">
-                    •Posted byu/DangitBebby 4 hours ago
+                    •{{postData}}
                   </p>
                 </div>
               </div>
@@ -40,24 +40,19 @@
             </div>
             <div class="row pl-2 mr-2 post-title">
               <p>
-                Over 6,000 workers at Del Monte Kenya Unlimited are on strike over ‘inhuman’ working conditions. Del
-                Monte
-                declared the strike illegal, workers vowed to strike until their demands are met. “The strike goes on.
-                All
-                power to the Kenyan working class.”
+                {{postTitle}}
               </p>
             </div>
             <div class="row post-image">
               <img alt="" alt=""
                    class=w-100
-                   src="http://pm1.narvii.com/7119/b0abdf491cffde4bdf95850956c1b15a5591a4b5r1-712-707v2_uhq.jpg">
-            </div>
+                   [src]="postImage"></div>
             <div class="row align-items-start justify-content-start mb-2 mt-2">
               <div class="pl-2 col-auto icon">
                 <img alt="" class="icon" src="assets/images/comment.svg">
               </div>
               <div class="col-sm-auto">
-                <p class="icon">22.1k Comments</p>
+                <p class="icon">{{numComments}}k Comments</p>
               </div>
               <div class="col-auto icon">
                 <img alt="" class="icon" src="assets/images/share.svg">

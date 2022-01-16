@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-top',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top.component.scss']
 })
 export class TopComponent implements OnInit {
+
+  @Input()
+  topPhoto='null'
+
+  @Input()
+  topName = 'null'
 
   constructor() { }
 
