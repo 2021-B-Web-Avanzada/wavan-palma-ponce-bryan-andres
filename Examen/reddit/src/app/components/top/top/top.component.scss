@@ -1,9 +1,11 @@
+
 img{
     border-radius:50%;
-    height:20px;
+    height:30px;
+  width:30px;
     border: 1px solid;
   }
-  .button{
+  .button-join{
     position: relative;
     background-color: #0079d3;
     border: none;
@@ -17,4 +19,10 @@ img{
   }
   .button:hover{
     background-color: #0080de;
+  }
+  .bi{
+    color: #00ff33;
+  }
+  .row *{
+    font-family: 'IBM Plex Sans'
   }

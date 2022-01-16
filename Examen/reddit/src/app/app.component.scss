@@ -63,7 +63,7 @@
 }
 
 //recap
-.w-100{
+.card{
   border: 1px solid #b4b4b4;
 }
 .update-from-reddit{
@@ -111,9 +111,44 @@
   url('http://pm1.narvii.com/7119/b0abdf491cffde4bdf95850956c1b15a5591a4b5r1-712-707v2_uhq.jpg');
   background-size: cover;
   color: white;
-  font-family: 'benton';
+  font-family: 'IBM Plex Sans';
 }
-
+app-top{
+    border-bottom: 1px solid #d0d0d0;
+}
+.btn-primary{
+  border-radius: 9999px;
+  font-family: 'IBM Plex Sans';
+  font-weight: bold;
+}
+.btn-premium{
+  border-radius: 9999px;
+  font-family: 'IBM Plex Sans';
+  font-weight: bold;
+  background-color: #fd4500;
+  color: #fff;
+}
+.bottom-btn{
+  font-size:12px;
+  background-color: #f5f5f5;
+  color: #0078d2;
+  font-weight:bold;
+}
+.bottom-btn:hover{
+  background-color: #ededed
+}
+.credits *{
+  font-size: 11px;
+  line-height: 25px;
+  font-family: 'Noto Sans';
+}
+.premium img{
+  height: 25px;
+}
+.premium{
+  font-family: 'IBM Plex Sans';
+  font-size: 11px;
+}
 
 
 
