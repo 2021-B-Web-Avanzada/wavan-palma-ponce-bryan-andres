@@ -5,10 +5,14 @@
   <p class="section-title  mb-1 mt-0 ">Trending today</p>
 
   <div class="row justify-content-sm-left ">
-    <app-trending></app-trending>
-    <app-trending></app-trending>
-    <app-trending></app-trending>
-    <app-trending></app-trending>
+    <div *ngFor="let trend of arregloTrending; let i = index" >
+      <app-trending [trendingDescription]="trend.trendingDescription"
+                    [trendingIcon]="trend.trendingIcon"
+                    [trendingName]="trend.trendingName"
+                    [trendingPhoto]="trend.trendingPhoto"
+                    [trendingSubr]="trend.trendingSubr"
+      ></app-trending>
+    </div>
   </div>
 
   <p class="section-title">Popular posts</p>
@@ -78,8 +82,8 @@
         <app-posts [numComments]="post.numComments"
                    [numVotes]="post.numVotes"
                    [postData]="post.postData"
-                   [postTitle]="post.postTitle"
                    [postImage]="post.postImage"
+                   [postTitle]="post.postTitle"
                    [subrName]="post.subrName"
                    [subrPhoto]="post.subrPhoto"
         ></app-posts>
@@ -99,9 +103,12 @@
             </div>
           </div>
         </div>
-        <ul class="list-group list-group-flush">
-          <app-top></app-top>
-          <app-top></app-top>
+        <ul *ngFor="let top of arregloTop; let i = index" class="list-group list-group-flush">
+          <app-top [index]="i"
+                   [rising]="top.rising"
+                   [topName]="top.topName"
+                   [topPhoto]="top.topPhoto">
+          </app-top>
         </ul>
         <button class="btn btn-primary m-2">View All</button>
         <div class="row m-2">

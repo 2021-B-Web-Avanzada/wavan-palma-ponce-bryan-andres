@@ -8,10 +8,16 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TopComponent implements OnInit {
 
   @Input()
+  index=-1
+
+  @Input()
   topPhoto='null'
 
   @Input()
-  topName = 'null'
+  topName = 'Holaaaaaaaa'
+
+  @Input()
+  rising=true
 
   constructor() { }
 

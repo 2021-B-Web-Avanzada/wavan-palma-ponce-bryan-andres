@@ -1,20 +1,20 @@
-<a href="#">
-<div class="card m-2 mt-0 mb-4" id="trendingPosts">
-  <div class="card-img-overlay-container ">
-    <div class="container-fluid ">
-      <div class="row pl-2" >
-        <h5 id="trending-title">{{trendingName}}</h5>
-      </div>
-      <div class="row pl-2">
-        <h6 id="trending-desc" class="mr-2">{{trendingDescription}}...</h6>
-      </div>
-      <div class="row pl-2">
+<div class="card-img-overlay-container card m-2 mt-0 mb-4">
+  <img class="img-t card" [src]="trendingPhoto">
+  <div class="container-fluid cf-1 m-0">
+  </div>
+  <div class=" container w-100 cf-2 pl-4 pr-4 pb-2 mb-1 ml-0">
+    <div class="row pl-2">
+      <h5 id="trending-title">{{trendingName}}</h5>
+    </div>
+    <div class="row pl-2">
+      <h6 class="mr-2" id="trending-desc">{{trendingDescription}}...</h6>
+    </div>
+    <div class="row pl-2">
         <span id="related-trending">
-          <img id="related-trending-img" [src]="trendingIcon" alt="related-trending">
+          <img [src]="trendingIcon" alt="related-trending" id="related-trending-img">
           {{trendingSubr}}
         </span>
-      </div>
     </div>
   </div>
 </div>
-</a>
+

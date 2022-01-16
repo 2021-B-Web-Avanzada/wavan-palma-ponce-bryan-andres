@@ -20,16 +20,59 @@ export class RutaInicioComponent implements OnInit {
   ]
   arregloTrending= [
     {
-
+      trendingPhoto:'',
+      trendingSubr:'',
+      trendingName:'',
+      trendingDescription:'',
+      trendingIcon:''
     },
     {
-
+      trendingPhoto:'',
+      trendingSubr:'',
+      trendingName:'',
+      trendingDescription:'',
+      trendingIcon:''
     },
     {
-
+      trendingPhoto:'',
+      trendingSubr:'',
+      trendingName:'',
+      trendingDescription:'',
+      trendingIcon:''
     },
     {
-
+      trendingPhoto:'',
+      trendingSubr:'',
+      trendingName:'',
+      trendingDescription:'',
+      trendingIcon:''
+    }
+  ]
+  arregloTop=[
+    {
+      topPhoto:'',
+      topName:'ddd',
+      rising:true
+    },
+    {
+      topPhoto:'',
+      topName:'',
+      rising:false
+    },
+    {
+      topPhoto:'',
+      topName:'',
+      rising:false
+    },
+    {
+      topPhoto:'',
+      topName:'',
+      rising:true
+    },
+    {
+      topPhoto:'',
+      topName:'',
+      rising:false
     }
   ]
 

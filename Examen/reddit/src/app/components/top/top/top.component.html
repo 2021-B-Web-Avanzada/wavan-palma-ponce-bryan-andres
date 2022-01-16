@@ -1,15 +1,19 @@
 <div class="row ml-2 mt-2 mb-2">
   <div class="col-1 id-top mr-0">
-    1
+    {{index+1}}
   </div>
-  <div class="col-1 pl-1 pr-1">
+  <div *ngIf="rising; else elseBlock" class="col-1 pl-1 pr-1">
     <i class="bi bi-chevron-up"></i>
   </div>
+  <ng-template #elseBlock>
+    <i class="bi bi-chevron-down pl-1 pr-1"></i>
+  </ng-template>
+
   <div class="col-1 mr-1 pl-1">
-    <img src="favicon.ico">
+    <img [src]="topPhoto">
   </div>
   <div class="col-5 top-subr pr-0">
-    r/jejejejejee
+    {{topName}}
   </div>
   <div class="col-3 pl-1">
     <button class="button-join " role="button"

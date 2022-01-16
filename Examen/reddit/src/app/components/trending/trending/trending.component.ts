@@ -22,6 +22,7 @@ export class TrendingComponent implements OnInit {
   @Input()
   trendingIcon = 'null'
 
+
   constructor() { }
 
   ngOnInit(): void {

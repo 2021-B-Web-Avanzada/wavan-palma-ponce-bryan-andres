@@ -20,9 +20,12 @@ img{
   .button:hover{
     background-color: #0080de;
   }
-  .bi{
+  .bi-chevron-up{
     color: #00ff33;
   }
+.bi-chevron-down{
+  color: #ff0000;
+}
   .row *{
     font-family: 'IBM Plex Sans'
   }
