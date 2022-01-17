@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;500;700&family=Noto+Sans:wght@700&display=swap');
+body {
+  background-color: #fff
+}
+.top-banner {
+  border-bottom: 2px solid;
+  background-color: #eeeeee;
+  height :20px;
+  font-size: 8px;
+  font-weight: bold;
+  color: #6a6f6f;
+}
+
+.top-banner p{
+  color: #000
+}
+span {
+  display: inline-block;
+  line-height: normal;
+}
+
+
+.bottom-banner{
+  border-bottom: 2px solid #5f99cf;
+  background-color: #cde2f6;
+  height: 35px;
+  align-items: center;
+  padding-top: 2px;
+  font-family: 'IBM Plex Sans';
+  font-weight: bolder;
+}
+.bottom-banner img{
+  height: 30px;
+}
+p{
+  display: inline;
+  font-size: 10px;
+}
+.center-image{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.p-n-f{
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal
+}
+.p-n-f-d{
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal
+}
+.center-image img{
+  height:400px;
+  width: 500px;
+}
