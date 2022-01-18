@@ -13,7 +13,7 @@ export class UserJPHService {
   }
 
   buscarTodos(params?: any): Observable<UserJphInterface[]> {
-    const url = environment.urlJPC + 'users';
+    const url = environment.urlJPC + '/users';
     Object
       .keys(params)
       .forEach(k => {
@@ -29,7 +29,7 @@ export class UserJPHService {
   }
 
   buscarUno(idUsuario: number) {
-    const url = environment.urlJPC + 'users/' + idUsuario;
+    const url = environment.urlJPC + '/users/' + idUsuario;
     return this.httpClient
       .get(url)
       .pipe(map((resultadoDatos) => resultadoDatos as UserJphInterface[]))

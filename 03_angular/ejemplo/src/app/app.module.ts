@@ -14,6 +14,8 @@ import {AuthService} from './servicios/auth/auth.service';
 import {EstaLogeadoGuard} from './servicios/auth/esta-logeado.guard';
 import {EsAdministradorGuard} from './servicios/auth/es-administrador.guard';
 import {BannerImagenesModule} from './componentes/banner-imagenes/banner-imagenes.module';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   // Componentes
@@ -32,11 +34,13 @@ import {BannerImagenesModule} from './componentes/banner-imagenes/banner-imagene
     // app.module.ts
     BrowserModule,
     AppRoutingModule,
-    BannerImagenesModule
+    BannerImagenesModule,
+    HttpClientModule,
+    FormsModule,
   ],
   // Servicios
   providers: [
-    AuthService,
+    //AuthService,
     EstaLogeadoGuard,
     EsAdministradorGuard
   ],
