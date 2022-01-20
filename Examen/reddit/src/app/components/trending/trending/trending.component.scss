@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;500;700&family=Noto+Sans:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Noto+Sans:wght@300;500;700&display=swap');
 
 #imd {
   height: 178px;
@@ -58,17 +58,19 @@
 
 
 #trending-title{
-  font-weight:700;
-  font-size: 16px;
+  font-weight:500;
+  font-size: 18px;
   margin-bottom: 5px;
-  font-family: 'benton';
+  font-family: 'IBM Plex Sans';
 }
 #trending-desc{
   font-size: 14px;
+  font-family: 'Noto Sans'
 }
 #related-trending-img{
   border-radius:50%;
   height:15px;
+  width: 15px;
   border: 1px solid;
   margin-right: 5px;
 }

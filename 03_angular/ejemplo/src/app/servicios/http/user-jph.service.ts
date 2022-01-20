@@ -32,7 +32,7 @@ export class UserJPHService {
     const url = environment.urlJPC + '/users/' + idUsuario;
     return this.httpClient
       .get(url)
-      .pipe(map((resultadoDatos) => resultadoDatos as UserJphInterface[]))
+      .pipe(map((resultadoDatos) => resultadoDatos as UserJphInterface))
   }
 
 }

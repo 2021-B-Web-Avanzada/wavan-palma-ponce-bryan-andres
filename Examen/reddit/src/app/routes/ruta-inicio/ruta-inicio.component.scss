@@ -82,7 +82,7 @@
   border: 1px solid #ababab;
 }
 .recap-title{
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
   font-size: 16px;
 }
@@ -104,10 +104,17 @@
       rgba(0, 0, 0, 0.8),
       #000000
   ),
-  url('http://pm1.narvii.com/7119/b0abdf491cffde4bdf95850956c1b15a5591a4b5r1-712-707v2_uhq.jpg');
+  url('https://i.scdn.co/image/ab67616d0000b2739ad2a9d4362443234a1a70b6');
   background-size: cover;
   color: white;
   font-family: 'IBM Plex Sans';
+  font-size: 16px;
+  font-weight: 500;
+}
+.top-title{
+  font-family: 'IBM Plex Sans';
+  font-size: 16px;
+  font-weight: 500;
 }
 app-top{
   border-bottom: 1px solid #d0d0d0;
