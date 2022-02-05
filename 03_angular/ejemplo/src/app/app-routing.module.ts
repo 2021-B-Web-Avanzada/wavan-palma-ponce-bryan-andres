@@ -49,7 +49,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'usuario/:idUsuario',
+    path: 'app/usuario/:idUsuario',
     component: RutaUsuarioPerfilComponent,
   },
   {
