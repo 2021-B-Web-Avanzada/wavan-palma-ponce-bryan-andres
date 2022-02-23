@@ -41,7 +41,7 @@ import {SocketIoModule} from "ngx-socket-io";
     FormsModule, //template driven form
     ReactiveFormsModule,
     SocketIoModule.forRoot({
-      url: 'http://localhost:8080',
+      url: 'ws://localhost:8080',
       options: {}
     })
   ],

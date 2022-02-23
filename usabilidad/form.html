@@ -1,102 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Contáctenos | Universidad Estatal del Sur de Manabí</title>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
           rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img alt="" class="d-inline-block align-text-top" height="24"
-                 src="http://www.espam.edu.ec/recursos/plantilla/img/logo.png"
-                 width="30">
-            Bootstrap
-        </a>
-        <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
-                class="navbar-toggler"
-                data-bs-target="#navbarNavAltMarkup" data-bs-toggle="collapse" type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a aria-current="page" class="nav-link active" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-                <a aria-disabled="true" class="nav-link" href="#">Disabled</a>
+<header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light h-75  banner">
+        <div class="container-fluid mx-auto order-0">
+            <a class="navbar-brand mx-auto p-0" href="#">
+                <img alt="escudo de la universidad estatal del sur de manabí" class="text-center m-0 p-0 col-md"
+                     height="100vh"
+                     src="logo.svg" tabindex="0">
+                <h1 class="d-inline u-name col-md" tabindex="0">
+                    Universidad Estatal del Sur de Manabí
+                </h1>
+            </a>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        <div class="container-fluid mx-auto">
+            <button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Barra de navegación"
+                    class="navbar-toggler  text-center"
+                    data-bs-target="#navbarNavAltMarkup" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  text-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="home.html">Inicio</a>
+                    <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                    <a class="nav-link" href="oferta.html">Oferta Académica</a>
+                    <a aria-current="page" class="nav-link active active-tab" href="form.html">Contáctenos</a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-<nav aria-label="breadcrumb" class="mx-2" style="--bs-breadcrumb-divider: '>';">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li aria-current="page" class="breadcrumb-item active">Library</li>
-    </ol>
-</nav>
+    </nav>
+    <nav aria-label="ubicación en la página" class="mx-2" style="--bs-breadcrumb-divider: '>';" tabindex="0">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="home.html" tabindex="0">Inicio</a></li>
+            <li aria-current="page" class="breadcrumb-item active" tabindex="0">Contáctenos</li>
+        </ol>
+    </nav>
+</header>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-            <div class="card shadow-sm" style="width: 18rem;">
-                <form>
-                    <div class="form-group">
-                        <h5 class="card-title">Card title</h5>
-                        <label for="inputNombresyApellidos">Nombres y Apellidos</label>
-                        <input aria-describedby="ayudaNombresyApellidos" class="form-control"
+            <div class="card shadow-sm p-4 mb-4 mx-2">
+                <form class="needs-validation">
+                    <div class="form-group ">
+                        <h4 class="card-title pb-3 text-center">Formulario de Contacto</h4>
+                        <label class="" for="inputNombresyApellidos">Nombres y Apellidos</label>
+                        <input aria-describedby="inputNombresyApellidos" class="form-control mb-3"
                                id="inputNombresyApellidos"
                                placeholder="Ejemplo: Marcos Gómez"
-                               type="email">
+                               aria-required='true' type="text">
                     </div>
                     <div class="form-group">
-                        <label for="inputCorreo">Correo Electrónico</label>
-                        <input class="form-control" id="inputCorreo" placeholder="Ejemplo: correo@gmail.com"
-                               type="email">
+                        <label class="" for="inputCorreo">Correo Electrónico</label>
+                        <input class="form-control mb-3" id="inputCorreo" placeholder="Ejemplo: correo@gmail.com"
+                               aria-required='true' type="email">
                     </div>
                     <div class="form-group">
                         <label for="inputTelefono">Télefono Celular</label>
-                        <input class="form-control" id="inputTelefono" placeholder="Ejemplo: +593 99 999 9999"
-                               type="tel">
+                        <br>
+                        <input class="form-control mb-3" id="inputTelefono" placeholder="Ejemplo: +593 99 999 9999"
+                               aria-required='true' type="tel">
                     </div>
                     <div class="form-group">
                         <label for="inputInfo">¿Qué desea saber?</label>
-                        <input class="form-control" id="inputInfo" placeholder="Ejemplo: ¿Cómo acceder a una beca?">
+                        <textarea autofocus class="form-control mb-0" id="inputInfo"
+                                  maxlength="500" placeholder="Ejemplo: ¿Cómo acceder a una beca?"></textarea>
+                        <span class="pull-right label label-default" id="count_message" aria-required='true'></span>
+                        <div class="mt-0 pt-0 mb-2 text-end" id="the-count">
+                            <span id="current">0</span>
+                            <span id="maximum">/ 500</span>
+                        </div>
                     </div>
-
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Solicitar Información</button>
+                    <button class="btn btn-outline-success" type="submit">Regresar</button>
+                    <br>
+                    <p class="text-end" tabindex="0"><small>TODOS los campos son obligatorios</small></p>
                 </form>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a class="card-link" href="#">Card link</a>
-                    <a class="card-link" href="#">Another link</a>
+            <div class="card shadow-sm p-4 mx-2 mb-5 h-50 overflow-auto directory">
+                <h4 class="card-title pb-3 text-center" tabindex="0">Formulario de Contacto</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" tabindex="0">Dirección de admisión y registro</h5>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-telephone my-1"></i>
+                            <b tabindex="0">Teléfono:</b>
+                            <p class="d-inline" tabindex="0">+593 99 653 5543</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-building my-1"></i>
+                            <b tabindex="0">Oficina:</b>
+                            <p class="d-inline" tabindex="0">Oficina de admisión y registro- Edificio Central - Cuarto
+                                Piso</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-envelope my-1"></i>
+                            <b tabindex="0">Correo Electrónico:</b>
+                            <p class="d-inline" tabindex="0">admision@unesum.edu.ec</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" tabindex="0">Dirección de Bienestrar Estudiantil</h5>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-telephone my-1"></i>
+                            <b tabindex="0">Teléfono:</b>
+                            <p class="d-inline" tabindex="0">+593 99 123 1143</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-building my-1"></i>
+                            <b tabindex="0">Oficina:</b>
+                            <p class="d-inline" tabindex="0">Oficina de Bienestar Estudiantil- Edificio Central - Segundo
+                                Piso</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-envelope my-1"></i>
+                            <b tabindex="0">Correo Electrónico:</b>
+                            <p class="d-inline" tabindex="0">bienestar@unesum.edu.ec</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" tabindex="0">Departamento de enfermería</h5>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-telephone my-1"></i>
+                            <b tabindex="0">Teléfono:</b>
+                            <p class="d-inline" tabindex="0">+593 98 653 1543</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-building my-1"></i>
+                            <b tabindex="0">Oficina:</b>
+                            <p class="d-inline" tabindex="0">Enfermería- Oficina de servicios integrales - Segundo Piso</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-envelope my-1"></i>
+                            <b tabindex="0">Correo Electrónico:</b>
+                            <p class="d-inline" tabindex="0">enfermeria@unesum.edu.ec</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" tabindex="0">Dirección de admisión y registro</h5>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-telephone my-1"></i>
+                            <b tabindex="0">Teléfono:</b>
+                            <p class="d-inline" tabindex="0">+593 99 653 5543</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-building my-1"></i>
+                            <b tabindex="0">Oficina:</b>
+                            <p class="d-inline" tabindex="0">Oficina de admisión y registro- Edificio Central - Cuarto
+                                Piso</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-envelope my-1"></i>
+                            <b tabindex="0">Correo Electrónico:</b>
+                            <p class="d-inline" tabindex="0">admision@unesum.edu.ec</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" tabindex="0">Dirección de admisión y registro</h5>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-telephone my-1"></i>
+                            <b tabindex="0">Teléfono:</b>
+                            <p class="d-inline" tabindex="0">+593 99 653 5543</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-building my-1"></i>
+                            <b tabindex="0">Oficina:</b>
+                            <p class="d-inline" tabindex="0">Oficina de admisión y registro- Edificio Central - Cuarto
+                                Piso</p>
+                        </div>
+                        <div class="my-1 mx-3">
+                            <i class="bi bi-envelope my-1"></i>
+                            <b tabindex="0">Correo Electrónico:</b>
+                            <p class="d-inline" tabindex="0">admision@unesum.edu.ec</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="mx-2">
+                <h4>Síguenos en:</h4>
+                <div class="w-25 my-1"><a href=""><i class="bi bi-facebook"></i>
+                    Facebook</a></div>
+                <div class="w-25 my-1"><a href=""><i class="bi bi-instagram"></i>
+                    Instragram</a></div>
+                <div class="w-25 my-1"><a href=""><i class="bi bi-youtube"></i>
+                    Youtube</a></div>
+            </div>
         </div>
-
     </div>
 </div>
+<footer tabindex="0">
+    <div class="text-center p-3 mt-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <p tabindex="0">
+            UNIVERSIDAD ESTATAL DEL SUR DE MANABÍ
+        </p>
+        <p tabindex="0">
+            DIRECCIÓN: KM 1½ VÍA JIPIJAPA-NOBOA - CAMPUS LOS ÁNGELES
+        </p>
+        <p tabindex="0">
+            TELÉFONO: 05-2600229/05-2601657/05-2600223
+        </p>
+        <p tabindex="0">
+            JIPIJAPA - MANABÍ - ECUADOR
+        </p>
+        <p tabindex="0">
+            COPYRIGHT © 2022
+        </p>
+
+    </div>
+</footer>
 <script crossorigin="anonymous"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="scripts.js"></script>
+
 </body>
-<script>
-    const phoneInputField = document.querySelector("#inputTelefono");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
 </html>
