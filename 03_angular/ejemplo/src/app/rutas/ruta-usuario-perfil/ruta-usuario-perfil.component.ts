@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UserJPHService} from '../../servicios/http/user-jph.service';
 import {UserJphInterface} from '../../servicios/http/interfaces/user-jph.interface';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatDialog} from "@angular/material/dialog";
+import {ModalEjemploComponent} from "../../componentes/modales/modal-ejemplo/modal-ejemplo.component";
 
 @Component({
   selector: 'app-ruta-usuario-perfil',
@@ -15,8 +17,26 @@ export class RutaUsuarioPerfilComponent implements OnInit {
   idUsuario = 0;
   usuarioActual?: UserJphInterface;
   formGroup?: FormGroup;
+  valorKnob = 30;
+  items = [{
+    label: 'Update', icon: 'pi pi-refresh', command: () => {
+      console.log('Hola')
+    }
+  }, {
+    label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']
+  }]
 
-  constructor(private readonly activatedRoute: ActivatedRoute, private readonly userJPHService: UserJPHService, private readonly formBuilder: FormBuilder, private readonly router: Router,) {
+  model={
+    left: true,
+    middle: false,
+    right: false
+  }
+
+  constructor(private readonly activatedRoute: ActivatedRoute, private readonly userJPHService: UserJPHService, private readonly formBuilder: FormBuilder, private readonly router: Router, public dialog: MatDialog) {
+  }
+
+  guardar() {
+    console.log('GUARDAR')
   }
 
   ngOnInit(): void {
@@ -32,6 +52,21 @@ export class RutaUsuarioPerfilComponent implements OnInit {
         }
       })
   }
+
+
+  abrirDialogo() {
+    const referenciaDialogo = this.dialog.open(ModalEjemploComponent, {
+      disableClose: true, data: {
+        animal: 'panda',
+      }
+    })
+    const despuesCerrado$ = referenciaDialogo.afterClosed()
+    despuesCerrado$
+      .subscribe((datos) => {
+        console.log(datos)
+      })
+  }
+
 
   buscarUsuario(id: number) {
     const buscarUsuarioPorId$ = this.userJPHService.buscarUno(id);
@@ -53,7 +88,7 @@ export class RutaUsuarioPerfilComponent implements OnInit {
           {
             value: this.usuarioActual ? this.usuarioActual.email : '', disabled: false
           }, [Validators.required, // min, max, minLength maxLength, email, pattern
-            Validators.minLength(3),])
+            Validators.minLength(3),]), esAdministrador: new FormControl(true)
       });
     const cambio$ = this.formGroup.valueChanges;
     cambio$.subscribe({

@@ -2,6 +2,30 @@
   <p>{{usuarioActual.name}}</p>
 </div>
 
+<div class="btn-group btn-group-toggle">
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+  </label>
+</div>
+
+<p-knob [(ngModel)]="valorKnob" [min]="0" [max]="60"></p-knob>
+
+<p-splitButton label="Save" icon="pi pi-check"
+               (onClick)="guardar()"
+               [model]="items"></p-splitButton>
+
+<button id="basic" type="button"
+        color="accent"
+        mat-raised-button
+        (click)="abrirDialogo()"
+>Boton</button>
+
 <div *ngIf="formGroup" class="container">
   <form [formGroup]="formGroup">
     <div class="mb-3">
@@ -34,6 +58,17 @@
         </div>
       </div>
     </div>
+    <div class="mb-3">
+      <label class="form-label"
+             for="email">
+        EsAdmin
+      </label>
+      <p-inputSwitch formControlName="esAdministrador"></p-inputSwitch>
+      <div class="form-text">
+        Seleccione si es admin
+      </div>
+    </div>
+
     <button (click)="actualizarUsuario()"
             [disabled]="formGroup.invalid"
             class="btn btn-primary">

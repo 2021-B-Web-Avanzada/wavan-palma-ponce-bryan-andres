@@ -6,7 +6,6 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/03_angular/ejemplo/.angular/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/Examen/reddit/.angular/cache" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/1" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/e" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/2/6" />
@@ -38,6 +37,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/9" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/b" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/e" />
+      <excludeFolder url="file://$MODULE_DIR$/Examen1B/reddit/.angular/cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

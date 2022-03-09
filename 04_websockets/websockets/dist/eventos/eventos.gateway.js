@@ -18,9 +18,27 @@ const socket_io_1 = require("socket.io");
 let EventosGateway = class EventosGateway {
     devolverHola(message, socket) {
         socket.broadcast
-            .emit('escucharEventoHola', {
-            mensaje: 'Bienvenido ' + message.nombre
-        });
+            .emit('escucharEventoHola', { mensaje: 'Bienvenido' + message.nombre });
+        return 'ok';
+    }
+    unirseSala(message, socket) {
+        socket.join(message.salaId);
+        const mensajeAEnviar = {
+            mensaje: 'Bienvenido' + message.nombre
+        };
+        socket.broadcast
+            .to(message.salaId)
+            .emit('escucharEventoUnirseSala', mensajeAEnviar);
+        return 'ok';
+    }
+    enviarMensaje(message, socket) {
+        const nuevoMensaje = {
+            nombre: message.nombre,
+            mensaje: message.mensaje,
+            salaId: message.salaId
+        };
+        socket.broadcast.to(message.salaId)
+            .emit('escucharEventoMensajeSala', nuevoMensaje);
         return 'ok';
     }
 };
@@ -32,11 +50,27 @@ __decorate([
     __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
     __metadata("design:returntype", void 0)
 ], EventosGateway.prototype, "devolverHola", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)('unirseSala'),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
+    __metadata("design:returntype", void 0)
+], EventosGateway.prototype, "unirseSala", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)('enviarMensaje'),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
+    __metadata("design:returntype", void 0)
+], EventosGateway.prototype, "enviarMensaje", null);
 EventosGateway = __decorate([
     (0, websockets_1.WebSocketGateway)(8080, {
         cors: {
             origin: '*',
-        }
+        },
     })
 ], EventosGateway);
 exports.EventosGateway = EventosGateway;

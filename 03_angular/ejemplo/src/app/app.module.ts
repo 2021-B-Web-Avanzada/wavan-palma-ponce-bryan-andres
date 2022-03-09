@@ -17,6 +17,16 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RutaUsuarioPerfilComponent} from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
 import {SocketIoModule} from "ngx-socket-io";
+import {InputSwitchModule} from "primeng/inputswitch";
+import {KnobModule} from "primeng/knob";
+import {SplitButtonModule} from "primeng/splitbutton";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule} from "@angular/material/button";
+import { ModalEjemploComponent } from './componentes/modales/modal-ejemplo/modal-ejemplo.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {NgbButtonsModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { RutaSalaComponent } from './rutas/ruta-sala/ruta-sala.component';
+
 
 @NgModule({
   // Componentes
@@ -29,7 +39,9 @@ import {SocketIoModule} from "ngx-socket-io";
     RutaUsuarioComponent,
     RutaPostComponent,
     RutaAppComponent,
-    RutaUsuarioPerfilComponent
+    RutaUsuarioPerfilComponent,
+    ModalEjemploComponent,
+    RutaSalaComponent
   ],
   // Modulos Importados
   imports: [
@@ -40,6 +52,14 @@ import {SocketIoModule} from "ngx-socket-io";
     HttpClientModule,
     FormsModule, //template driven form
     ReactiveFormsModule,
+    InputSwitchModule,
+    KnobModule,
+    SplitButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    NgbModule,
+    NgbButtonsModule,
     SocketIoModule.forRoot({
       url: 'ws://localhost:8080',
       options: {}

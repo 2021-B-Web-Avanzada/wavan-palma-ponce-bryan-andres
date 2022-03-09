@@ -10,12 +10,17 @@ import {RutaInicioComponent} from "./rutas/ruta-inicio/ruta-inicio.component";
 import {EstaLogeadoGuard} from './servicios/auth/esta-logeado.guard';
 import {EsAdministradorGuard} from "./servicios/auth/es-administrador.guard";
 import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
+import {RutaSalaComponent} from "./rutas/ruta-sala/ruta-sala.component";
 
 const routes: Routes = [
   {
     path: 'login',
     component: RutaLoginComponent,
     canActivate:[EstaLogeadoGuard],
+  },
+  {
+    path:':salaId/sala/:nombre',
+    component:RutaSalaComponent
   },
   {
     path: 'inicio',
