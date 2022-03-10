@@ -6,14 +6,14 @@ import {RutaJuegoComponent} from "./routes/ruta-juego/ruta-juego.component";
 
 const routes: Routes = [
   {
-    path: '**',
-    redirectTo: '/juego',
-    pathMatch: 'full'
+    path: 'juego/:salaId/:username',
+    component: RutaJuegoComponent
   },
   {
-    path: 'juego',
-    component: RutaJuegoComponent
-  }
+    path: '**',
+    redirectTo: '/juego/1/andres',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

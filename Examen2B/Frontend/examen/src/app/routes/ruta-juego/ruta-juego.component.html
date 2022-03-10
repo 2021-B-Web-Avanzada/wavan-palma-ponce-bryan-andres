@@ -2,14 +2,16 @@
 <div class="text center container">
   <div class="row">
     <div class="col-sm-12 col-md-4 col-lg-4">
-      One of three columns
+      <div *ngFor="let col of arregloJugadores">
+        {{col['username']}}-{{col['puntaje']}}
+      </div>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-8 my-5">
-      <div class="row m-0 p-0" *ngFor="let row of tablaResuelta; let i=index">
-        <div class="col m-0 p-0" *ngFor="let col of row; let j=index">
-          <div class="card m-0 p-0">
-            <div (click)="verificarJuego(i,j)" class="card-body m-0 text-center">
-              {{mostrar ? tablaResuelta[i][j] : ''}}
+      <div *ngFor="let row of tablaResuelta; let i=index" class="row m-0 p-0">
+        <div *ngFor="let col of row; let j=index" class="col m-0 p-0">
+          <div class="card m-0 p-0 tile" [ngStyle]="{'border':'solid 2px'+color, 'color':color}">
+            <div (click)="verificarJuego(i,j)" class="card-body m-0 p-0 text-center pieza">
+              {{ tablaResuelta[i][j]}}
             </div>
           </div>
         </div>

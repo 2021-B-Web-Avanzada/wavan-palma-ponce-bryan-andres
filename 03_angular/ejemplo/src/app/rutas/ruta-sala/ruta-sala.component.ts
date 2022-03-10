@@ -56,7 +56,6 @@ export class RutaSalaComponent implements OnInit, OnDestroy {
   }
 
   logicaSalas(salaId: string, nombre: string){
-    console.log('HOLA')
     this.desSuscribirse();
     const respEscucharEventoMensajeSala = this.websocketsService
       .escucharEventoMensajeSala()
@@ -70,7 +69,6 @@ export class RutaSalaComponent implements OnInit, OnDestroy {
               nombre: data.nombre,
               posicion: data.nombre === this.nombre ? 'der' : 'izq'
             })
-
           },
           error:(error)=>{
             console.error({error});
@@ -90,6 +88,7 @@ export class RutaSalaComponent implements OnInit, OnDestroy {
         }
       );
     this.arregloSuscripciones.push(respEscucharEventoUnirseSala);
+    console.log(respEscucharEventoUnirseSala)
     this.arregloSuscripciones.push(respEscucharEventoMensajeSala);
     this.websocketsService.ejecutarEventoUnirseSala(+this.salaId, this.nombre);
   }

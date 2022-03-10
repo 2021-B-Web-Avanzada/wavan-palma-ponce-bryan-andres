@@ -23,6 +23,37 @@ let EventosGateway = class EventosGateway {
         });
         return 'ok';
     }
+    finJuego(message, socket) {
+        socket.join(message.salaId);
+        const mensajeAEnviar = {
+            mensaje: message.user
+        };
+        socket.broadcast
+            .to(message.salaId)
+            .emit('escucharEventoFinJuego', mensajeAEnviar);
+        return 'ok';
+    }
+    unirseSala(message, socket) {
+        socket.join(message.salaId);
+        const mensajeAEnviar = {
+            mensaje: 'Bienvenido' + message.nombre
+        };
+        socket.broadcast
+            .to(message.salaId)
+            .emit('escucharEventoUnirseSala', mensajeAEnviar);
+        return 'ok';
+    }
+    revelarPieza(message, socket) {
+        const nuevoMensaje = {
+            salaId: message.salaId,
+            mensaje: message.mensaje,
+            jugadas: message.jugadas,
+            user: message.user
+        };
+        socket.broadcast.to(message.salaId)
+            .emit('escucharEventoRevelarPieza', nuevoMensaje);
+        return 'ok';
+    }
 };
 __decorate([
     (0, websockets_1.SubscribeMessage)('hola'),
@@ -32,6 +63,30 @@ __decorate([
     __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
     __metadata("design:returntype", void 0)
 ], EventosGateway.prototype, "devolverHola", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)('finJuego'),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
+    __metadata("design:returntype", void 0)
+], EventosGateway.prototype, "finJuego", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)('unirseSala'),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
+    __metadata("design:returntype", void 0)
+], EventosGateway.prototype, "unirseSala", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)('revelarPieza'),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
+    __metadata("design:returntype", void 0)
+], EventosGateway.prototype, "revelarPieza", null);
 EventosGateway = __decorate([
     (0, websockets_1.WebSocketGateway)(8080, {
         cors: {

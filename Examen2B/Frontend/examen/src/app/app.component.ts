@@ -9,18 +9,6 @@ import {WebsocketsService} from "./services/websockets/websockets.service";
 })
 export class AppComponent implements OnInit{
   ngOnInit() {
-    this.websocketsService
-      .escucharEventoHola()
-      .subscribe(
-        {
-          next: (data) => {
-            console.log(data);
-          },
-          error: (error) => {
-            console.error({error})
-          }
-        }
-      );
   }
 
   title = 'ejemplo';
@@ -30,8 +18,5 @@ export class AppComponent implements OnInit{
   ) {
   }
 
-  eventoHola() {
-    this.websocketsService.ejecutarEventoHola()
-  }
 
 }
