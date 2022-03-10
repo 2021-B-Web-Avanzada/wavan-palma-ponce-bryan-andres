@@ -10,12 +10,15 @@ import {NgbButtonsModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SocketIoModule} from 'ngx-socket-io';
 import {RutaJuegoComponent} from "./routes/ruta-juego/ruta-juego.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatDialogModule} from "@angular/material/dialog";
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   // Componentes
   declarations: [
     AppComponent,
-    RutaJuegoComponent
+    RutaJuegoComponent,
+    ModalComponent,
   ],
   // Modulos Importados
   imports: [
@@ -27,6 +30,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
+    MatDialogModule,
     NgbButtonsModule,
     SocketIoModule.forRoot({
       url: 'ws://localhost:8080',

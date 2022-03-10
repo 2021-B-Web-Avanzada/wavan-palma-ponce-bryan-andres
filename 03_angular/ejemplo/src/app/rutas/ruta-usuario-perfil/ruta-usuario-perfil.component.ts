@@ -32,7 +32,11 @@ export class RutaUsuarioPerfilComponent implements OnInit {
     right: false
   }
 
-  constructor(private readonly activatedRoute: ActivatedRoute, private readonly userJPHService: UserJPHService, private readonly formBuilder: FormBuilder, private readonly router: Router, public dialog: MatDialog) {
+  constructor(private readonly activatedRoute: ActivatedRoute,
+              private readonly userJPHService: UserJPHService,
+              private readonly formBuilder: FormBuilder,
+              private readonly router: Router,
+              public dialog: MatDialog) {
   }
 
   guardar() {

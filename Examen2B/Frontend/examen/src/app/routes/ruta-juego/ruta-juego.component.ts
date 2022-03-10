@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {WebsocketsService} from "../../services/websockets/websockets.service";
+import {MatDialog} from "@angular/material/dialog";
+import {ModalComponent} from "../../components/modal/modal.component";
 
 @Component({
   selector: 'app-ruta-juego',
@@ -10,11 +12,11 @@ import {WebsocketsService} from "../../services/websockets/websockets.service";
 })
 export class RutaJuegoComponent implements OnInit {
   tabla = [
-    ['0', '0', '0', '1', '|>', '2', '|>', '2', '1', '0'],
-    ['1', '1', '0', '1', '1', '3', '3', '|>', '1', '0'],
-    ['|>', '2', '1', '0', '0', '1', '|>', '4', '3', '1'],
-    ['2', '|>', '2', '1', '1', '2', '3', '|>', '|>', '1'],
-    ['1', '2', '|>', '1', '1', '|>', '4', '4', '3', '1'],
+    ['0', '0', '0', '1', '|>', '2', '|>', '2', '2', '|>'],
+    ['1', '1', '0', '1', '1', '3', '3', '|>', '2', '1'],
+    ['|>', '3', '1', '0', '0', '1', '|>', '4', '3', '1'],
+    ['|>', '|>', '2', '1', '1', '2', '3', '|>', '|>', '1'],
+    ['2', '3', '|>', '1', '1', '|>', '4', '4', '3', '1'],
     ['0', '1', '2', '2', '2', '2', '|>', '|>', '3', '1'],
     ['0', '0', '1', '|>', '1', '1', '3', '|>', '|>', '1'],
   ]
@@ -38,14 +40,14 @@ export class RutaJuegoComponent implements OnInit {
     [false, false, false, false, false, false, false, false, false, false],
   ]
 
-  tablaColores =[
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
-    ['#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
+  tablaColores = [
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
+    ['#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF', '#9A9A9AFF'],
   ]
 
   username = '';
@@ -55,7 +57,7 @@ export class RutaJuegoComponent implements OnInit {
   arregloSuscripciones: Subscription[] = [];
   mensaje = '';
   data = ''
-  finJuego=false
+  finJuego = false
   arregloJugadores: {
     username: string
     puntaje: number
@@ -65,16 +67,17 @@ export class RutaJuegoComponent implements OnInit {
     username: string
     puntaje: number
     color: string
-  } = {username: 'null', puntaje: 0, color:'#fff'}
-  ganador:{
+  } = {username: 'null', puntaje: 0, color: '#fff'}
+  ganador: {
     username: string
     puntaje: number
     color: string
-  }= {username: 'null', puntaje: 0, color:'#fff'}
+  } = {username: 'null', puntaje: 0, color: '#fff'}
 
   constructor(
     public readonly activatedRoute: ActivatedRoute,
-    public readonly websocketsService: WebsocketsService
+    public readonly websocketsService: WebsocketsService,
+    public dialog: MatDialog
   ) {
 
   }
@@ -89,7 +92,7 @@ export class RutaJuegoComponent implements OnInit {
           const username = parametrosDeRuta['username']
           this.salaId = salaId
           this.username = username
-          this.color='#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6)
+          this.color = '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
           this.arregloJugadores.push({
             'username': this.username,
             'puntaje': this.puntaje,
@@ -108,16 +111,16 @@ export class RutaJuegoComponent implements OnInit {
       this.puntaje += 1
     }
     this.tablaJugadas[i][j] = true
-    this.websocketsService.ejecutarEventoRevelarPieza(+this.salaId, this.tablaResuelta, this.tablaJugadas,
+    this.websocketsService.ejecutarEventoRevelarPieza(+this.salaId, i, j,
       {'username': this.username, 'puntaje': this.puntaje, 'color': this.color})
     for (let user of this.arregloJugadores) {
       if (this.username == user['username']) {
         user['puntaje'] = this.puntaje
       }
     }
-    if (this.puntaje>2){
-      this.finJuego=true
-      this.ganador={'username':this.username,'puntaje':this.puntaje,'color':this.color}
+    if (this.puntaje > (17/(this.arregloJugadores.length))) {
+      this.finJuego = true
+      this.ganador = {'username': this.username, 'puntaje': this.puntaje, 'color': this.color}
       this.websocketsService.ejecutarEventoFinJuego(+this.salaId,
         {'username': this.username, 'puntaje': this.puntaje, 'color': this.color})
     }
@@ -125,6 +128,7 @@ export class RutaJuegoComponent implements OnInit {
 
   revelarPieza(i: number, j: number) {
     this.tablaResuelta[i][j] = this.tabla[i][j]
+    this.tablaColores[i][j] = this.color
   }
 
   logicaJuego() {
@@ -134,8 +138,11 @@ export class RutaJuegoComponent implements OnInit {
       .subscribe(
         {
           next: (data: any) => {
-            this.tablaResuelta = data['mensaje']
-            this.tablaJugadas = data['jugadas']
+            let x = data['x']
+            let y = data['y']
+            this.tablaResuelta[x][y] = this.tabla[x][y]
+            this.tablaColores[x][y] = data['user']['color']
+            this.tablaJugadas[x][y] = true
             let flag = true
             for (let user of this.arregloJugadores) {
               if (data['user']['username'] == user['username']) {
@@ -166,13 +173,13 @@ export class RutaJuegoComponent implements OnInit {
         }
       );
 
-    const respEscucharEventoFinJuego= this.websocketsService
+    const respEscucharEventoFinJuego = this.websocketsService
       .escucharEventoFinJuego()
       .subscribe(
         {
           next: (data: any) => {
-            this.finJuego=true
-            this.ganador=data
+            this.finJuego = true
+            this.ganador = data
             console.log(this.ganador)
           },
           error: (error) => {
@@ -186,6 +193,19 @@ export class RutaJuegoComponent implements OnInit {
     this.websocketsService.ejecutarEventoUnirseSala(+this.salaId, this.username, this.puntaje)
 
 
+  }
+
+  abrirDialogo() {
+    const referenciaDialogo = this.dialog.open(ModalComponent, {
+      disableClose: true, data: {
+        animal: 'panda',
+      }
+    })
+    const despuesCerrado$ = referenciaDialogo.afterClosed()
+    despuesCerrado$
+      .subscribe((datos) => {
+        console.log(datos)
+      })
   }
 
   private desSuscribirse() {

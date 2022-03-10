@@ -46,8 +46,8 @@ let EventosGateway = class EventosGateway {
     revelarPieza(message, socket) {
         const nuevoMensaje = {
             salaId: message.salaId,
-            mensaje: message.mensaje,
-            jugadas: message.jugadas,
+            x: message.x,
+            y: message.y,
             user: message.user
         };
         socket.broadcast.to(message.salaId)

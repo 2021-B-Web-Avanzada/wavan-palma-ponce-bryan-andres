@@ -2,14 +2,20 @@
 <div class="text center container">
   <div class="row">
     <div class="col-sm-12 col-md-4 col-lg-4">
-      <div *ngFor="let col of arregloJugadores">
-        {{col['username']}}-{{col['puntaje']}}
+      <h3>Lista de jugadores</h3>
+      <div *ngFor="let jugador of arregloJugadores">
+        <div class="card my-2 ">
+          <div class="card-body">
+            <h5 class="card-title" [ngStyle]="{'color':jugador['color']}">{{jugador['username']}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Puntaje: {{jugador['puntaje']}}</h6>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-sm-12 col-md-4 col-lg-8 my-5">
       <div *ngFor="let row of tablaResuelta; let i=index" class="row m-0 p-0">
         <div *ngFor="let col of row; let j=index" class="col m-0 p-0">
-          <div class="card m-0 p-0 tile" [ngStyle]="{'border':'solid 2px'+color, 'color':color}">
+          <div class="card m-0 p-0 tile" [ngStyle]="{'border':'solid 2px'+tablaColores[i][j], 'color':tablaColores[i][j]}">
             <div (click)="verificarJuego(i,j)" class="card-body m-0 p-0 text-center pieza">
               {{ tablaResuelta[i][j]}}
             </div>

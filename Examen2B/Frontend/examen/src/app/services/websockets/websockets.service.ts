@@ -24,13 +24,13 @@ export class WebsocketsService {
   }
 
 
-  ejecutarEventoRevelarPieza(salaId: number, mensaje: string[][], jugadas: boolean[][], user:{username:string, puntaje:number, color:string}) {
+  ejecutarEventoRevelarPieza(salaId: number, x:number, y: number , user:{username:string, puntaje:number, color:string}) {
     //Emitimos un evento
     this.socket.emit(
       'revelarPieza', {
         salaId,
-        mensaje,
-        jugadas,
+        x,
+        y,
         user
       });
   }

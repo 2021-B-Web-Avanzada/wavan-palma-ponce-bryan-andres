@@ -25,34 +25,6 @@ export class EventosGateway {
                 });
         return 'ok';
     }
-/*
-    @SubscribeMessage('enviarUsuarios')
-    enviarUsuarios(
-        @MessageBody()
-            message: {
-            salaId: string, users: {
-                username: string
-                puntaje: number
-            }[]
-        },
-        @ConnectedSocket()
-            socket: Socket
-    ) {
-        socket.join(message.salaId);
-        const mensajeAEnviar: any = {
-            mensaje: message.users
-        };
-        socket.broadcast
-            .to(message.salaId)
-            .emit(
-                'escucharEventoEnviarUsuarios',
-                mensajeAEnviar
-            );
-        return 'ok';
-    }
-
-
- */
 
         @SubscribeMessage('finJuego')
         finJuego(
@@ -106,14 +78,14 @@ export class EventosGateway {
     @SubscribeMessage('revelarPieza')
     revelarPieza(
         @MessageBody()
-            message: { salaId: string, mensaje: string[][], jugadas:boolean[][], user:{ username: string, puntaje: number, color: string } },
+            message: { salaId: string, x: number, y:number, user:{ username: string, puntaje: number, color: string } },
         @ConnectedSocket()
             socket: Socket
     ) {
         const nuevoMensaje = {
             salaId: message.salaId,
-            mensaje: message.mensaje,
-            jugadas:message.jugadas,
+            x:message.x,
+            y:message.y,
             user:message.user
         } as any;
         socket.broadcast.to(message.salaId)

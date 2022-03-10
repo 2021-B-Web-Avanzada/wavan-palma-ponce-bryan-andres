@@ -17,8 +17,8 @@ export declare class EventosGateway {
     }, socket: Socket): string;
     revelarPieza(message: {
         salaId: string;
-        mensaje: string[][];
-        jugadas: boolean[][];
+        x: number;
+        y: number;
         user: {
             username: string;
             puntaje: number;
