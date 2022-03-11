@@ -25,9 +25,7 @@ let EventosGateway = class EventosGateway {
     }
     finJuego(message, socket) {
         socket.join(message.salaId);
-        const mensajeAEnviar = {
-            mensaje: message.user
-        };
+        const mensajeAEnviar = message['user'];
         socket.broadcast
             .to(message.salaId)
             .emit('escucharEventoFinJuego', mensajeAEnviar);

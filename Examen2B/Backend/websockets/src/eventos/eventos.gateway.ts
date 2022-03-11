@@ -40,9 +40,7 @@ export class EventosGateway {
                 socket: Socket
         ) {
             socket.join(message.salaId);
-            const mensajeAEnviar: any = {
-                mensaje: message.user
-            };
+            const mensajeAEnviar: any = message['user'];
             socket.broadcast
                 .to(message.salaId)
                 .emit(

@@ -123,13 +123,12 @@ export class RutaJuegoComponent implements OnInit {
       this.finJuego = true
       this.ganador = {'username': this.username, 'puntaje': this.puntaje, 'color': this.color}
       this.abrirDialogo(this.ganador)
-      this.websocketsService.ejecutarEventoFinJuego(+this.salaId,
-        {'username': this.username, 'puntaje': this.puntaje, 'color': this.color})
+      this.websocketsService.ejecutarEventoFinJuego(+this.salaId, this.ganador)
     }
   }
 
   revelarPieza(i: number, j: number) {
-    if( !this.tablaJugadas[i][j]){
+    if (!this.tablaJugadas[i][j]) {
       this.tablaResuelta[i][j] = this.tabla[i][j]
       this.tablaColores[i][j] = this.color
     }
@@ -184,11 +183,13 @@ export class RutaJuegoComponent implements OnInit {
           next: (data: any) => {
             this.finJuego = true
             this.ganador = data
-            for (let lista of this.tablaJugadas){
-              for (let item of lista){
-                  item=true
+            for (let lista of this.tablaJugadas) {
+              for (let item of lista) {
+                item = true
               }
             }
+            console.log(data)
+            console.log(this.ganador)
             this.abrirDialogo(this.ganador)
           },
           error: (error) => {
@@ -204,7 +205,7 @@ export class RutaJuegoComponent implements OnInit {
 
   }
 
-  abrirDialogo(user: { username:string,puntaje:number }) {
+  abrirDialogo(user: { username: string, puntaje: number }) {
     const referenciaDialogo = this.dialog.open(ModalComponent, {
       disableClose: true, data: {
         user,

@@ -17,8 +17,8 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.ganador=this.data['user']['username']
-    console.log(this.ganador)
   }
 
 
