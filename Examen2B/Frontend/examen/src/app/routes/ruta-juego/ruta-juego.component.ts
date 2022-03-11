@@ -118,17 +118,22 @@ export class RutaJuegoComponent implements OnInit {
         user['puntaje'] = this.puntaje
       }
     }
-    if (this.puntaje > (17/(this.arregloJugadores.length))) {
+    //if (this.puntaje > (17/(this.arregloJugadores.length))) {
+    if (this.puntaje > (1)) {
       this.finJuego = true
       this.ganador = {'username': this.username, 'puntaje': this.puntaje, 'color': this.color}
+      this.abrirDialogo(this.ganador)
       this.websocketsService.ejecutarEventoFinJuego(+this.salaId,
         {'username': this.username, 'puntaje': this.puntaje, 'color': this.color})
     }
   }
 
   revelarPieza(i: number, j: number) {
-    this.tablaResuelta[i][j] = this.tabla[i][j]
-    this.tablaColores[i][j] = this.color
+    if( !this.tablaJugadas[i][j]){
+      this.tablaResuelta[i][j] = this.tabla[i][j]
+      this.tablaColores[i][j] = this.color
+    }
+
   }
 
   logicaJuego() {
@@ -153,7 +158,6 @@ export class RutaJuegoComponent implements OnInit {
             if (flag) {
               this.arregloJugadores.push(data['user'])
             }
-
           },
           error: (error) => {
             console.error({error});
@@ -180,7 +184,12 @@ export class RutaJuegoComponent implements OnInit {
           next: (data: any) => {
             this.finJuego = true
             this.ganador = data
-            console.log(this.ganador)
+            for (let lista of this.tablaJugadas){
+              for (let item of lista){
+                  item=true
+              }
+            }
+            this.abrirDialogo(this.ganador)
           },
           error: (error) => {
             console.error({error});
@@ -195,16 +204,15 @@ export class RutaJuegoComponent implements OnInit {
 
   }
 
-  abrirDialogo() {
+  abrirDialogo(user: { username:string,puntaje:number }) {
     const referenciaDialogo = this.dialog.open(ModalComponent, {
       disableClose: true, data: {
-        animal: 'panda',
+        user,
       }
     })
     const despuesCerrado$ = referenciaDialogo.afterClosed()
     despuesCerrado$
       .subscribe((datos) => {
-        console.log(datos)
       })
   }
 

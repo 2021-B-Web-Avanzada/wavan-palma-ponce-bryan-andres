@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {RutaJuegoComponent} from "../../routes/ruta-juego/ruta-juego.component";
 
@@ -9,16 +9,18 @@ import {RutaJuegoComponent} from "../../routes/ruta-juego/ruta-juego.component";
 })
 export class ModalComponent implements OnInit {
 
+  @Input()
+  ganador=''
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
               public dialogRef:MatDialogRef<RutaJuegoComponent>) {
   }
 
   ngOnInit(): void {
-    console.log(this.data)
+    this.ganador=this.data['user']['username']
+    console.log(this.ganador)
   }
 
-  cerrarDialogo(){
-    this.dialogRef.close({nombre:'Andrés'})
-  }
+
 
 }

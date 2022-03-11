@@ -40,23 +40,7 @@ export class WebsocketsService {
     return this.socket.fromEvent('escucharEventoRevelarPieza')
   }
 
-/*
-ejecutarEventoEnviarUsuarios(salaId: number, users: { username: string, puntaje: number }[]) {
-  console.log(users)
-  this.socket.emit(
-    'enviarUsuarios', {
-      salaId,
-      users,
-    });
-}
 
-escucharEventoEnviarUsuarios() {
-  return this
-    .socket
-    .fromEvent('escucharEventoEnviarUsuarios');
-}
-
- */
   ejecutarEventoFinJuego(salaId: number, user: { username: string, puntaje: number, color: string}) {
     this.socket.emit(
       'finJuego', {
