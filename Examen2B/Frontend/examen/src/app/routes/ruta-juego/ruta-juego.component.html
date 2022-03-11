@@ -1,7 +1,7 @@
 <h1 class="text-center mb-5">Juego de Buscaminas Multijugador</h1>
 <div class="text center container">
   <div class="row">
-    <div class="col-sm-12 col-md-4 col-lg-4 mx-5">
+    <div class="col-sm-12 col-md-4 col-lg-4 mx-3">
       <h3>Lista de jugadores</h3>
       <div *ngFor="let jugador of arregloJugadores">
         <div class="card my-2 ">
@@ -12,16 +12,16 @@
         </div>
       </div>
     </div>
-    <div class="col m-5">
-      <div *ngFor="let row of tablaResuelta; let i=index" class="row m-0 p-0">
-        <div *ngFor="let col of row; let j=index" class="col m-0 p-0 center-block cont">
-          <div (click)="verificarJuego(i,j)"  class="card m-0 p-0"
-               [ngStyle]="{'border':'solid 2px'+tablaColores[i][j], 'color':tablaColores[i][j], 'font-size':'30px'}">
-            <div class="card-body m-0 p-0 pieza text-center">
-              {{ tablaResuelta[i][j]}}
+    <div class="col m-3">
+      <div class="col-sm-12 col-md-4 col-lg-8 my-5">
+        <div *ngFor="let row of tablaResuelta; let i=index" class="row m-0 p-0">
+          <div *ngFor="let col of row; let j=index" class="col m-0 p-0">
+            <div class="card m-0 p-0 tile" [ngStyle]="{'border':'solid 2px'+tablaColores[i][j], 'color':tablaColores[i][j], 'font-size': '24px'}">
+              <div (click)="verificarJuego(i,j)" class="card-body m-0 p-0 text-center pieza">
+                {{ tablaResuelta[i][j]}}
+              </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>

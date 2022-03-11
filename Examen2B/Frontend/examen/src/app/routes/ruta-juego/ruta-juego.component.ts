@@ -118,8 +118,7 @@ export class RutaJuegoComponent implements OnInit {
         user['puntaje'] = this.puntaje
       }
     }
-    //if (this.puntaje > (17/(this.arregloJugadores.length))) {
-    if (this.puntaje > (1)) {
+    if (this.puntaje > (17/(this.arregloJugadores.length))) {
       this.finJuego = true
       this.ganador = {'username': this.username, 'puntaje': this.puntaje, 'color': this.color}
       this.abrirDialogo(this.ganador)
